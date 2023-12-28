@@ -1,0 +1,13 @@
+public class Solution {
+    public int MySqrt(int x) {
+        long res = 0;
+        long a = x;
+        do
+        {
+            res++;
+        }
+        while (res * res <= a);
+        res--;
+        return (int)res;
+    }
+}
