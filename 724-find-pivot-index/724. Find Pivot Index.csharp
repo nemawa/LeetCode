@@ -1,0 +1,24 @@
+public class Solution {
+    public int PivotIndex(int[] nums)    {
+        int i = 0;
+        int lSum = 0;
+        int rSum = nums.Sum() - nums[0];
+        while (i < nums.Length)
+        {
+            if (lSum == rSum) return i;
+            lSum = lSum + nums[i];
+            i++;
+            if (i == nums.Length) 
+            {
+                rSum = 0;
+            }
+            else
+            {
+                rSum = rSum - nums[i];
+            }
+            
+        }
+
+        return -1;
+    }
+}
