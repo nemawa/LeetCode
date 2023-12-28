@@ -1,0 +1,53 @@
+public class Solution {
+    public string Convert(string s, int numRows) {
+
+            if (numRows == 1) return s;
+            char[,] temp = new char[numRows, s.Length];
+            int r = 0;
+            int c = 0;
+            bool down = true;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (down)
+                {
+                    if (r < numRows)
+                    {
+                        temp[r, c] = s[i];
+                        r++;
+                    }
+                    else
+                    {
+                        down = false;
+                        r = r - 2;
+                        c = c + 1;
+                        temp[r, c] = s[i];
+                    }
+                }
+                else
+                {
+                    if (r > 0)
+                    {
+                        r = r - 1;
+                        c = c + 1;
+                        temp[r, c] = s[i];
+                    }
+                    else
+                    {
+                        down = true;
+                        r = r + 1;
+                        temp[r, c] = s[i];
+                        r = r + 1;
+                    }
+                }
+            }
+            StringBuilder res = new StringBuilder();
+            for (int i = 0; i < numRows; i++)
+            {
+                for (int j = 0; j < s.Length; j++)
+                {
+                    if (temp[i, j] != '\0') res.Append(temp[i, j]);
+                }
+            }
+            return res.ToString();
+    }
+}
