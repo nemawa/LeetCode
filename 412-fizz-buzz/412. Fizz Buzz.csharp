@@ -1,0 +1,14 @@
+public class Solution {
+    public IList<string> FizzBuzz(int n) {
+        List<string> a = new List<string>();
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 15 == 0) a.Add("FizzBuzz");
+            else if (i % 3 == 0) a.Add("Fizz");
+            else if (i % 5 == 0) a.Add("Buzz");
+            else a.Add(i.ToString());
+            
+        }
+        return a;
+    }
+}
