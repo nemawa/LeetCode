@@ -1,0 +1,21 @@
+public class Solution {
+    public int[] FullBloomFlowers(int[][] flowers, int[] people) {
+
+   
+            int[] res = new int[people.Length];
+
+            for (int i = 0; i < flowers.Length; i++)
+            {
+                
+                for ( int j = 0; j < people.Length; j++)
+                {
+                    if ((flowers[i][0] <= people[j]) && (people[j] <= flowers[i][1]))
+                    {
+                        res[j]++;
+                    }
+                }
+            }
+            return res;
+
+    }
+}
