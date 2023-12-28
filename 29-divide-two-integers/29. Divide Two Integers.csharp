@@ -1,0 +1,22 @@
+public class Solution {
+    public int Divide(int dividend, int divisor) {
+            bool sign = false;
+            if (dividend >= 0)
+            {
+                if (divisor < 0) sign = true;
+            }
+            else
+            {
+                if (divisor > 0) sign = true;
+            }
+            int res = Math.Abs(divisor);
+            int count = 0;
+            while (res <= Math.Abs(dividend))
+            {
+                count++;
+                res = res + Math.Abs(divisor);
+            }
+            if (sign) count = -count;
+            return count;
+    }
+}
