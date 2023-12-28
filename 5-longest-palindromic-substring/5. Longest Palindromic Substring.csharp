@@ -1,0 +1,39 @@
+public class Solution {
+
+        public  bool IsPalindrome(int i, int j, string s)
+        {
+            bool res = true;
+            for (int a = 0; a <= (j - i) / 2; a++)
+            {
+                if (s[i + a] != s[j - a]) return false;
+            }
+            return res;
+        }
+
+        public string LongestPalindrome(string s)
+        {
+            if (s.Length < 2) return s;
+
+            string res = "";
+
+            int i = 0;
+            while (i < s.Length )
+            {
+                for (int j = s.Length - 1; j >= i; j--)
+                {
+                    if (IsPalindrome(i, j, s))
+                    {
+                        if ((j - i + 1) > res.Length)
+                        {
+                            res = s.Substring(i, j - i + 1);
+                            break;
+                        }
+                    }
+                }
+
+                i++;
+            }
+            return res;
+
+        }
+}
