@@ -1,0 +1,46 @@
+
+public class Solution {
+    public bool IsValid(string s) {
+        
+        Stack<Char> myStack = new Stack<Char>();
+        for (int i = 0; i < s.Length; i++)
+        {
+            switch (s[i]) 
+            {
+                case '{': myStack.Push('{');
+                    break;
+                case '[': myStack.Push('[');
+                    break;
+                case '(': myStack.Push('(');
+                    break;
+                case '}':
+                    if (myStack.Count == 0) return false;
+                    if( '{' != myStack.Peek())
+                        return false;
+                    else
+                        myStack.Pop();
+                    break;
+                case ']':
+                    if (myStack.Count == 0) return false;
+                    if( '[' != myStack.Peek())
+                        return false;
+                    else
+                        myStack.Pop();
+                    break;
+                case ')':
+                    if (myStack.Count == 0) return false;
+                    if( '(' != myStack.Peek())
+                        return false;
+                    else
+                        myStack.Pop();
+                    break;
+            }
+            
+        }
+        if (myStack.Count() == 0)
+            return true;
+        else    
+            return false;
+
+    }
+}
