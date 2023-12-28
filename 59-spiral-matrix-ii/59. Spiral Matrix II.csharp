@@ -1,0 +1,44 @@
+public class Solution {
+    public int[][] GenerateMatrix(int n)
+    {
+        int[][] res = new int[n][];
+        for (int i = 0; i < n; i++)
+        {
+            res[i] = new int[n];
+        }
+
+        int s1 = 0, s2 = n - 1;
+        int cur = 1;
+    
+
+        while (cur < n * n + 1)
+        {
+
+            for (int i = s1; i < s2 + 1; i++)
+            {
+                res[s1][i] = cur;
+                cur++;
+            }
+
+            for (int i = s1 + 1; i < s2 + 1; i++)
+            {
+                res[i][s2] = cur;
+                cur++;
+            }
+            for (int i = s2-1; i > s1 - 1 ; i--)
+            {
+                res[s2][i] = cur;
+                cur++;
+            }
+            for (int i = s2 -1; i > s1; i--)
+            {
+                res[i][s1] = cur;
+                cur++;
+            }
+            s1++;
+            s2--;
+            
+        }
+        return res;
+    }
+}
