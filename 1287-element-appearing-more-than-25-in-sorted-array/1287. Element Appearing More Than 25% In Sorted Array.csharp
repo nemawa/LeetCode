@@ -1,0 +1,21 @@
+public class Solution {
+    public int FindSpecialInteger(int[] arr) {
+
+        int res = arr[0];
+        int count = 1;
+
+        for (int i = 1; i < arr.Length; i++)
+        {
+            if ( arr[i] == res) count++;
+            else
+            {
+                if (count > arr.Length / 4) return res;
+
+                res = arr[i];
+                count = 1;
+            }
+        }
+        
+        return res;
+    }
+}
