@@ -1,0 +1,38 @@
+public class Solution {
+    public bool IsPathCrossing(string path) {
+        
+        bool res = false;
+        var visited = new HashSet<(int, int)>();
+        int x = 0, y = 0;
+        visited.Add((0,0));
+        for (int i = 0; i < path.Length; i++)
+        {
+            switch (path[i])
+            {
+                case 'N':
+                    y++;
+                    break;
+                case 'S':
+                    y--;
+                    break;
+                case 'E':
+                    x++;
+                    break;
+                case 'W':
+                    x--;
+                    break;
+                    
+            }
+
+            if (visited.Contains((x,y)))
+                return true;
+            else 
+            {
+                visited.Add((x,y));
+            }
+        }
+
+        return res;
+        
+    }
+}
