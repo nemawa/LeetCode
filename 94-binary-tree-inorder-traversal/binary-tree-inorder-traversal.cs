@@ -1,3 +1,4 @@
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -17,21 +18,21 @@ public class Solution {
 
         if (root == null) return res;
 
-        return Inorder(res, root);
+        return Inorder(ref res, root);
     }
 
-    public IList<int> Inorder(IList<int> res, TreeNode root)
+    public List<int> Inorder(ref List<int> res, TreeNode root)
     {
         if (root.left != null)
         {
-            res = Inorder(res, root.left);
+            res = Inorder(ref res, root.left);
         }
         
         res.Add(root.val);
         
         if (root.right != null)
         {
-            res = Inorder(res, root.right);
+            res = Inorder(ref res, root.right);
         }
 
         return res;
