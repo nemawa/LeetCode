@@ -23,17 +23,11 @@ public class Solution {
 
     public List<int> Inorder(ref List<int> res, TreeNode root)
     {
-        if (root.left != null)
-        {
-            res = Inorder(ref res, root.left);
-        }
-        
+        if (root == null) return res;
+
+        res = Inorder(ref res, root.left);
         res.Add(root.val);
-        
-        if (root.right != null)
-        {
-            res = Inorder(ref res, root.right);
-        }
+        res = Inorder(ref res, root.right);
 
         return res;
     }
