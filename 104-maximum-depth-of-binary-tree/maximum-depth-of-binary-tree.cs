@@ -16,13 +16,9 @@ public class Solution {
         if (root == null) return 0; 
         else
         {
-            int lDepth = MaxDepth(root.left);
-            int rDepth = MaxDepth(root.right);
+            return Math.Max(MaxDepth(root.left), MaxDepth(root.right)) + 1;
             
-            if (lDepth > rDepth)
-                return lDepth + 1;
-            else
-                return rDepth + 1;
+
         }
     
     }
