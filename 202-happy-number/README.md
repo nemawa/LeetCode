@@ -1,4 +1,4 @@
-<p>Write an algorithm to determine if a number <code>n</code> is happy.</p>
+<h2><a href="https://leetcode.com/problems/happy-number">Happy Number</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Write an algorithm to determine if a number <code>n</code> is happy.</p>
 
 <p>A <strong>happy number</strong> is a number defined by the following process:</p>
 
